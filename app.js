@@ -11,7 +11,7 @@ mongoose.connect('mongodb://kchindaliya1998:Gargee7@ac-x2n0cht-shard-00-00.188fi
     useUnifiedTopology: true
 });
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use('/otp-service', otpRoutes);
 app.use((req, res, next) => {
