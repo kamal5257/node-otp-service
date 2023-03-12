@@ -42,4 +42,4 @@ const sendOTP = (req, res) => {
     }
 }
 
-module.exports = { sendOTP }
+module.exports = {sendOTP,}

@@ -2,12 +2,13 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 // const otpGenerator = require('otp-generator');
-const otpModel = require('../models/otpModel');
+const otpModel = require('../models/otpModel')
 const validation = require('../validation/validateRequest')
-const {sendOTP} = require('../controller/appController')
+const {sendOTP} = require('../controller/appController');
+const validate  = require('../validation/validation');
 
 
-router.post('/send', validation.validReq,sendOTP);
+router.post('/send',(req,res,next) => validate(req,res,validation.validReq,next),sendOTP);
 
 // router.post('/send', (req, res, next) => {
 
